@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "intent-cache-agent"
+version = "0.1.0"
+description = "Intent cache agent reference implementation"
+readme = "REFERENCE-IMPLEMENTATION-intent-cache-agent.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+adk = [
+  "google-adk>=0.1.0",
+  "google-genai>=0.5.0",
+]
+redis = [
+  "redis>=5.0",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
