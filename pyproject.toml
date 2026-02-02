@@ -20,6 +20,13 @@ adk = [
 redis = [
   "redis>=5.0",
 ]
+dev = [
+  "pytest>=7.4",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
 
 [tool.setuptools]
 package-dir = {"" = "src"}

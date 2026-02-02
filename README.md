@@ -38,6 +38,14 @@ GOOGLE_GENAI_USE_VERTEXAI=FALSE
 GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY
 ```
 
+## Local services (Docker)
+
+If you want Redis for the Redis demo, start it with Docker Compose:
+
+```bash
+docker compose up -d
+```
+
 ## Agent-as-Tool usage (ADK)
 
 The cached agent is wrapped with `AgentTool` and called before any reasoning agent.
@@ -113,6 +121,13 @@ For Redis demo:
 ```bash
 .venv\Scripts\python.exe -m pip install "intent-cache-agent[redis]"
 .venv\Scripts\python.exe examples\redis_intent_cache_demo.py
+```
+
+## Tests
+
+```bash
+.venv\Scripts\python.exe -m pip install "intent-cache-agent[dev]"
+.venv\Scripts\python.exe -m pytest
 ```
 
 ## Extension points

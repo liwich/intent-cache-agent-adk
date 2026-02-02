@@ -61,5 +61,6 @@ Run (requires Redis and extras):
 
 ```bash
 .venv\Scripts\python.exe -m pip install "intent-cache-agent[redis]"
+docker compose up -d
 .venv\Scripts\python.exe examples\redis_intent_cache_demo.py
 ```
