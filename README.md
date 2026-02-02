@@ -4,9 +4,17 @@ Reusable intent-cache agent that works as an ADK agent-as-tool. It normalizes a 
 
 ## Why this exists
 
-- **Generic**: teams define their own intents/slots and cache backends.
-- **Deterministic**: normalization is strict and cache keys are canonicalized.
-- **Composable**: use it as a tool before reasoning agents.
+Teams keep re-solving the same problem: repeated user requests that map to the same intent and parameters still hit expensive LLM/tool pipelines. This project provides a reusable, deterministic cache layer that short-circuits those repeats without changing downstream agents.
+
+What it solves:
+- **Latency**: repeated intents return cached artifacts immediately.
+- **Cost**: avoid LLM/tool invocations for common, stable requests.
+- **Consistency**: canonical keys + strict normalization reduce drift.
+- **Reusability**: teams plug in their own intents/slots and backends.
+
+Where it fits:
+- Sits before reasoning agents as an **agent-as-tool**.
+- Returns a cached artifact or `null` so the existing flow remains unchanged.
 
 ## Install
 
